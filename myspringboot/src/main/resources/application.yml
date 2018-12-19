@@ -1,0 +1,30 @@
+server:
+  port: 1111
+  servlet:
+    context-path: /springboot
+spring:
+  profies:
+    active: dev
+  datasource:
+    url: jdbc:mysql://rm-wz9d68asen14s55qjjo.mysql.rds.aliyuncs.com:3306/develop?useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+    driver-class-name: com.mysql.jdbc.Driver
+    username: lx_dev
+    password: SZw111kfWQdQQ5YYtztpwj9v
+  jpa:
+    hibernate:
+      ddl-auto: update  # 第一次简表create  后面用update
+    show-sql: true
+my:
+  name: forezp
+  age: 12
+  number: ${random.int}
+  uuid: ${random.uuid}
+  max: ${random.int(10)}
+  value: ${random.value}
+  greeting: hi,i'm ${my.name}
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
